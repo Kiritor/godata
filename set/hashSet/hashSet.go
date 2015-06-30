@@ -32,3 +32,11 @@ func (set *HashSet) Remove(e interface{}) {
 func (set *HashSet) Clear() {
 	set.m = make(map[interface{}]bool)
 }
+
+/**
+   if element is contain in the set ,the element
+   can not be function、map、slice,otherwise it can be panic
+*/
+func (set *HashSet) Contains(e interface{}) bool {
+	return set.m[e]
+}
