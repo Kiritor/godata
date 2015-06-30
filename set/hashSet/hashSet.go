@@ -1,7 +1,7 @@
 package hashSet
 
 import (
-	//"godata/set"
+	"godata/set"
 )
 
 type HashSet struct {
@@ -44,4 +44,22 @@ func (set *HashSet) Contains(e interface{}) bool {
 //return the size of the set
 func (set *HashSet) Size() int {
 	return len(set.m)
+}
+
+//return a set is eaquals an other set
+func (set *HashSet) Same(other Set) bool {
+	if other == nil {
+		return false
+	}
+	if set.Size() != other.Size() {
+		return false
+	}
+
+	for key:=range set.m {
+		if !other.Contains(key) {
+			return false
+		}
+	}
+
+	return true
 }
