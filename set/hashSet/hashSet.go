@@ -63,3 +63,21 @@ func (set *HashSet) Same(other Set) bool {
 
 	return true
 }
+//iteral the set
+func (set *HashSet) Elements() []interface{} {
+    initialLen := len(set.m)
+	snapshot := make([]interface{}, initialLen)
+	actualLen := 0
+	for key := range set.m {
+		if actualLen < initialLen {
+			snapshot[actualLen] = key
+		} else {
+			snapshot = append(snapshot, key)
+		}
+		actualLen++
+	}
+	if actualLen < initialLen {
+		snapshot = snapshot[:actualLen]
+	}
+	return snapshot
+}
