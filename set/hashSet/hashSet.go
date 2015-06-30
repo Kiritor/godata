@@ -69,8 +69,10 @@ func (set *HashSet) Same(other set.Set) bool {
 func (set *HashSet) Elements() []interface{} {
     initialLen := len(set.m)
 	snapshot := make([]interface{}, initialLen)
+	actLen:=0
 	for key := range set.m {
-		snapshot = append(snapshot, key)
+		snapshot[actLen] = key
+		actLen++
 	}
 	return snapshot
 }
@@ -91,3 +93,4 @@ func (set *HashSet) String() string {
 	buf.WriteString("}")
 	return buf.String()
 }
+
