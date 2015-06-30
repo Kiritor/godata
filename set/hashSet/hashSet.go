@@ -28,3 +28,7 @@ func (set *HashSet) Remove(e interface{}) {
 	delete(set.m,e)
 }
 
+//clear a set
+func (set *HashSet) Clear() {
+	set.m = make(map[interface{}]bool)
+}
