@@ -40,3 +40,8 @@ func (set *HashSet) Clear() {
 func (set *HashSet) Contains(e interface{}) bool {
 	return set.m[e]
 }
+
+//return the size of the set
+func (set *HashSet) Size() int {
+	return len(set.m)
+}
