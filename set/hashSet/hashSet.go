@@ -2,6 +2,7 @@ package hashSet
 
 import (
 	"godata/set"
+	"bytes"
 )
 
 type HashSet struct {
@@ -71,4 +72,21 @@ func (set *HashSet) Elements() []interface{} {
 		snapshot = append(snapshot, key)
 	}
 	return snapshot
+}
+
+//Stirng the set
+func (set *HashSet) String() string {
+	buf :=bytes.Buffer
+	buf.WriteString("Set{")
+	first:=true
+	for key:=range set.m {
+		if first {
+			first = false
+		}else {
+			buf.WriteString("  ")
+		}
+		buf.WriteString(fmt.Sprintf("%v"),key)
+	}
+	buf.WriteString("}")
+	return buf.String()
 }
