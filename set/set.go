@@ -13,6 +13,6 @@ type Set interface {
 	Contains(e interface{}) bool            //是否包含元素
 	Size()  int                             //集合大小
 	Same(other Set)   bool                  //判断集合是否相等
-	Elements()  []interface                 //返回元素列表
+	Elements()  []interface{}                 //返回元素列表
 	String() string                         //集合字符串表现形式
 }

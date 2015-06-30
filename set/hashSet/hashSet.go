@@ -2,6 +2,7 @@ package hashSet
 
 import (
 	"godata/set"
+	"fmt"
 	"bytes"
 )
 
@@ -48,7 +49,7 @@ func (set *HashSet) Size() int {
 }
 
 //return a set is eaquals an other set
-func (set *HashSet) Same(other Set) bool {
+func (set *HashSet) Same(other set.Set) bool {
 	if other == nil {
 		return false
 	}
@@ -76,16 +77,16 @@ func (set *HashSet) Elements() []interface{} {
 
 //Stirng the set
 func (set *HashSet) String() string {
-	buf :=bytes.Buffer
+	var buf bytes.Buffer
 	buf.WriteString("Set{")
 	first:=true
 	for key:=range set.m {
 		if first {
 			first = false
 		}else {
-			buf.WriteString("  ")
+			buf.WriteString(",")
 		}
-		buf.WriteString(fmt.Sprintf("%v"),key)
+		buf.WriteString(fmt.Sprintf("%v",key))
 	}
 	buf.WriteString("}")
 	return buf.String()
