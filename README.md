@@ -25,7 +25,7 @@ type Set interface {
 
 //高级用法
 //判断是否为超集
-func IsSuperSet(one,other Set) bool
+func IsSuperSet(one,other Set) bool {}
 //合并集合
-func Union(one,other Set) Set
+func Union(one,other Set) Set {}
 ```
