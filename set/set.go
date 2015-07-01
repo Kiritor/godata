@@ -43,7 +43,7 @@ func IsSuperSet(one,other Set) bool {
 	return true
 }
 
-
+//合并两个集合
 func Union(one,other Set) Set {
 	if one.Same(other) {
 		return one
@@ -53,3 +53,18 @@ func Union(one,other Set) Set {
 	}
 	return one
 }
+
+//集合的差集运算
+/*func Intersect(one,other Set) Set {
+	var resultSet Set = one
+	resultSet.Clear()
+	for _,key:=range one.Elements() {
+		if !other.Contains(key) {
+			resultSet.Add(key)
+		}
+	}
+	return resultSet
+}
+*/
+
+
