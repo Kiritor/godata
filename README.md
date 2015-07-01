@@ -11,7 +11,7 @@ Golang基础数据结构实现
 
 &nbsp;&nbsp;&nbsp;&nbsp;接口 Set包含的方法如下:
 
-<code>
+```go
 type Set interface {
 	Add(e interface{}) bool                 //添加元素
 	Remove(e interface{})                   //删除元素
@@ -22,4 +22,4 @@ type Set interface {
 	Elements()  []interface{}               //返回元素列表
 	String() string                         //集合字符串表现形式
 }
-</code>
+```
