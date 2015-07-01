@@ -22,4 +22,10 @@ type Set interface {
 	Elements()  []interface{}               //返回元素列表
 	String() string                         //集合字符串表现形式
 }
+
+//高级用法
+//判断是否为超集
+func IsSuperSet(one,other Set) bool
+//合并集合
+func Union(one,other Set) Set
 ```
