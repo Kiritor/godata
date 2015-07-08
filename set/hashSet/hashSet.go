@@ -1,3 +1,8 @@
+/**
+ * HashSet:Thread not safe
+ * @Author        LCore
+ * @Site          http://kiritor.github.io
+*/
 package hashSet
 
 import (
