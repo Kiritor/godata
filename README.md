@@ -29,7 +29,7 @@ func IsSuperSet(one,other Set) bool {}
 //合并集合
 func Union(one,other Set) Set {}
 ```
-####HashSet
+###HashSet
 &nbsp;&nbsp;&nbsp;&nbsp;HashSet集合中包含一组不重复出现且无特性顺序的元素(容量自增).HashSet实现Set接口,支持hash表(实际上就是go语言的map)
 &nbsp;&nbsp;&nbsp;&nbsp;示例:
 ```go
