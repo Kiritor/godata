@@ -1,6 +1,6 @@
 # godata (Go Data Structrues)
 Golang基础数据结构实现
-
+[TOC]
 ### 数据结构
 * 容器
 	* Set
