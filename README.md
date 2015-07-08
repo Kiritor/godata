@@ -3,10 +3,10 @@ Golang基础数据结构实现
 ### 数据结构
 
 - [容器]
-  - [Set](#Set)
-    - [HashSet](#HashSet)
+  - [Set](#set)
+    - [HashSet](#hashSet)
  
-### Set
+###Set
 &nbsp;&nbsp;&nbsp;&nbsp;HashSet集合中包含一组不重复出现且无特性顺序的元素(容量自增)Set直观上和数学上的集(set)概念是相同的。Set最大的特性就是不允许在其中存放的元素是重复的。set可以用来过滤在其他集合中存放的元素,从而得到一个没有包含重复元素的新集合。
 
 &nbsp;&nbsp;&nbsp;&nbsp;接口 Set包含的方法如下:
@@ -29,7 +29,7 @@ func IsSuperSet(one,other Set) bool {}
 //合并集合
 func Union(one,other Set) Set {}
 ```
-#### HashSet
+####HashSet
 &nbsp;&nbsp;&nbsp;&nbsp;HashSet集合中包含一组不重复出现且无特性顺序的元素(容量自增).HashSet实现Set接口,支持hash表(实际上就是go语言的map)
 &nbsp;&nbsp;&nbsp;&nbsp;示例:
 ```go
