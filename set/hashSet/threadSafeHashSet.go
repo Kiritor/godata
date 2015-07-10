@@ -6,7 +6,9 @@
 package hashSet
 
 import (
-
+    "godata/set"
+	"fmt"
+	"bytes"
 	"sync"
 )
 
@@ -36,4 +38,34 @@ func (hashSet *ThreadHashSet) Clear() {
 	hashSet.mutex.Lock()
 	defer hashSet.mutex.Unlock()
 	hashSet.HashSet.Clear()
+}
+
+func (hashSet *ThreadHashSet) Contains(e interface{}) bool{
+	hashSet.mutex.Lock()
+	defer hashSet.mutex.Unlock()
+	return hashSet.HashSet.Contains(e)
+}
+
+func (hashSet *ThreadHashSet) Size() int {
+	hashSet.mutex.Lock()
+	defer hashSet.mutex.Unlock()
+	return hashSet.HashSet.Size()
+}
+
+func (hashSet *ThreadHashSet) Same(set Set) bool {
+	hashSet.mutex.Lock()
+	defer hashSet.mutex.Unlock()
+	return hashSet.HashSet.Same(set)
+}
+
+func (hashSet *ThreadHashSet) Elements() interface{} {
+	hashSet.mutex.Lock()
+	defer hashSet.mutex.Unlock()
+	return hashSet.HashSet.Elements()
+}
+
+func (hashSet *ThreadHashSet) String() string {
+	hashSet.mutex.Lock()
+	defer hashSet.mutex.Unlock()
+	return hashSet.HashSet.String()
 }

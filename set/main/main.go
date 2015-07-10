@@ -18,4 +18,11 @@ func main(){
 	fmt.Println(set2.Elements())
 	fmt.Println(set.IsSuperSet(set1,set2))
 	fmt.Println(set.Union(set1,set2))
+	h :=make(map[string][]string)
+	h1 :=make([]string,10)
+	h1[0] ="hehe"
+	h["key1"] = h1
+	thread := hashSet.NewThreadHashSet()
+	fmt.Println(h)
+	     fmt.Println(thread.HashSet.String())
 }
