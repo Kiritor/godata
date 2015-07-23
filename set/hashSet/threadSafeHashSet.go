@@ -2,27 +2,25 @@
  * ThreadHashSet:Thread safe
  * @Author        LCore
  * @Site          http://kiritor.github.io
-*/
+ */
 package hashSet
 
 import (
-    "godata/set"
-	"fmt"
-	"bytes"
+	"godata/set"
 	"sync"
 )
 
 type ThreadHashSet struct {
-	HashSet                      //匿名字段
-	mutex sync.Mutex
+	HashSet //匿名字段
+	mutex   sync.Mutex
 }
 
-func NewThreadHashSet() *ThreadHashSet{
+func NewThreadHashSet() *ThreadHashSet {
 	var mutex sync.Mutex
-	return &ThreadHashSet{HashSet{m:make(map[interface{}]bool)},mutex}
+	return &ThreadHashSet{HashSet{m: make(map[interface{}]bool)}, mutex}
 }
 
-func(hashSet *ThreadHashSet) Add(e interface{}) bool {
+func (hashSet *ThreadHashSet) Add(e interface{}) bool {
 	hashSet.mutex.Lock()
 	defer hashSet.mutex.Unlock()
 	return hashSet.HashSet.Add(e)
@@ -40,7 +38,7 @@ func (hashSet *ThreadHashSet) Clear() {
 	hashSet.HashSet.Clear()
 }
 
-func (hashSet *ThreadHashSet) Contains(e interface{}) bool{
+func (hashSet *ThreadHashSet) Contains(e interface{}) bool {
 	hashSet.mutex.Lock()
 	defer hashSet.mutex.Unlock()
 	return hashSet.HashSet.Contains(e)
@@ -52,7 +50,7 @@ func (hashSet *ThreadHashSet) Size() int {
 	return hashSet.HashSet.Size()
 }
 
-func (hashSet *ThreadHashSet) Same(set Set) bool {
+func (hashSet *ThreadHashSet) Same(set set.Set) bool {
 	hashSet.mutex.Lock()
 	defer hashSet.mutex.Unlock()
 	return hashSet.HashSet.Same(set)
