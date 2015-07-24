@@ -71,7 +71,7 @@ func (set *HashSet) Same(other set.Set) bool {
 }
 
 //iteral the set
-func (set *HashSet) Elements() []interface{} {
+func (set *HashSet) Values() []interface{} {
 	initialLen := len(set.m)
 	snapshot := make([]interface{}, initialLen)
 	actLen := 0
@@ -97,4 +97,9 @@ func (set *HashSet) String() string {
 	}
 	buf.WriteString("}")
 	return buf.String()
+}
+
+//if empty
+func (set *HashSet) Empty() bool {
+	return set.Size()==0
 }

@@ -6,15 +6,16 @@
 
 package set
 
+import (
+	"godata/container"
+)
+
 type Set interface {
 	Add(e interface{}) bool      //添加元素
 	Remove(e interface{})        //删除元素
-	Clear()                      //清空元素
 	Contains(e interface{}) bool //是否包含元素
-	Size() int                   //集合大小
 	Same(other Set) bool         //判断集合是否相等
-	Elements() []interface{}     //返回元素列表
-	String() string              //集合字符串表现形式
+	container.Container          //集成container接口
 }
 
 /**
@@ -33,7 +34,7 @@ func IsSuperSet(one, other Set) bool {
 	if oneLen > 0 && otherLen == 0 {
 		return true
 	}
-	for _, key := range other.Elements() {
+	for _, key := range other.Values() {
 		if !one.Contains(key) && key != nil {
 			return false
 		}
@@ -47,7 +48,7 @@ func Union(one, other Set) Set {
 	if one.Same(other) {
 		return one
 	}
-	for _, key := range other.Elements() {
+	for _, key := range other.Values() {
 		one.Add(key)
 	}
 	return one

@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"godata/set"
+	"godata/container"
 	"godata/set/hashSet"
 )
 
@@ -15,7 +16,7 @@ func main() {
 	set2.Add(88)
 	fmt.Println(set1.String())
 	fmt.Println(set1.Contains(5))
-	fmt.Println(set2.Elements())
+	fmt.Println(set2.Values())
 	fmt.Println(set.IsSuperSet(set1, set2))
 	fmt.Println(set.Union(set1, set2))
 	h := make(map[string][]string)
@@ -29,4 +30,6 @@ func main() {
 		set1.Add(i)
 	}
 	fmt.Println(set1.String())
+	var hhh container.Container = hashSet.NewHashSet()
+	fmt.Println(hhh.Values())
 }

@@ -56,14 +56,20 @@ func (hashSet *ThreadHashSet) Same(set set.Set) bool {
 	return hashSet.HashSet.Same(set)
 }
 
-func (hashSet *ThreadHashSet) Elements() interface{} {
+func (hashSet *ThreadHashSet) Values() interface{} {
 	hashSet.mutex.Lock()
 	defer hashSet.mutex.Unlock()
-	return hashSet.HashSet.Elements()
+	return hashSet.HashSet.Values()
 }
 
 func (hashSet *ThreadHashSet) String() string {
 	hashSet.mutex.Lock()
 	defer hashSet.mutex.Unlock()
 	return hashSet.HashSet.String()
+}
+
+func (hashSet *ThreadHashSet) Empty() bool {
+	hashSet.mutex.Lock()
+	defer hashSet.mutex.Unlock()
+	return hashSet.Empty()
 }
