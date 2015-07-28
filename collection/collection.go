@@ -5,9 +5,6 @@
  */
 package collection
 
-import (
-	"godata/iterable"
-)
 
 type Collection interface {
 	//return the number of elements in this collection
