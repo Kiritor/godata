@@ -5,7 +5,6 @@
  */
 package collection
 
-
 type Collection interface {
 	//return the number of elements in this collection
 	Size() int
@@ -15,5 +14,4 @@ type Collection interface {
 	Clear()
 	//return slice of the collection's element
 	Values() []interface{}
-
 }
