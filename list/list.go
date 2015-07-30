@@ -5,9 +5,14 @@
  */
 package list
 
+import (
+	"godata/collection"
+)
+
 type List interface {
 	Get(index int) (interface{}, bool)
 	Remove(index int)
-	Add(elements ...interface{}) bool
+	Add(elements ...interface{})
 	Contains(elements ...interface{}) bool
+	collection.Collection
 }
