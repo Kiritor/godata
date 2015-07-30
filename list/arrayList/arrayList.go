@@ -1,9 +1,9 @@
 package arrayList
 
 import (
+	"fmt"
 	"godata/list"
 	"strings"
-	"fmt"
 )
 
 /**
@@ -78,12 +78,12 @@ func (list *ArrayList) Contains(elements ...interface{}) bool {
 
 func (list *ArrayList) String() string {
 	str := "ArrayList["
-	values :=[]string{}
-	for _,value :=range list.elements[:list.Size()] {
-		values = append(values,fmt.Sprintf("%v",value))
+	values := []string{}
+	for _, value := range list.elements[:list.Size()] {
+		values = append(values, fmt.Sprintf("%v", value))
 	}
-	str +=strings.Join(values," , ")
-	str +="]"
+	str += strings.Join(values, ",")
+	str += "]"
 	return str
 }
 
