@@ -1,9 +1,9 @@
 # godata (Go Data Structrues)
 Golang基础数据结构实现
 ### 数据结构
-- [collection](#Collection)
-  - [Set](#Set)
-    - [HashSet](#HashSet)
+- [collection](#collection)
+  - [Set](#set)
+    - [HashSet](#hashSet)
 
 ### Collection
 &nbsp;&nbsp;集合接口,所有结构都应该实现的接口,提供集合都应该有的方法集合。
