@@ -1,6 +1,6 @@
 # godata (Go Data Structrues)
 Golang基础数据结构实现
-### 数据结构
+## 数据结构
 - [collection](#collection)
   - [List](#list)
     - [ArrayList](#arrayList)
@@ -23,7 +23,7 @@ type Collection interface {
 	Values() []interface{}
 }
 ```
-### List	
+#### List	
 &nbsp;&nbsp;&nbsp;&nbsp;List(列表),主要的特性是元素以线性的方式存储,没有一个排序规则,且集合中可以存放重复的对象.通过索引访问和删除元素.
 
 &nbsp;&nbsp;&nbsp;&nbsp;接口List继承collection接口,包含的方法如下:
@@ -34,7 +34,7 @@ type Collection interface {
 	Contains(elements ...interface{}) bool
 	collection.Collection
 ```
-#### ArrayList
+##### ArrayList
 &nbsp;&nbsp;&nbsp;&nbsp;ArrayList实现List接口,ArrayList是基于动态数组的数据结构,会自动进行扩容(100%扩容)和压缩操作(当实际大小为容器的1/4时收缩为实际大小),ArrayList的Get、Remove方法都是O(n)时间复杂度,Contains方法为O(n*n)复杂度.
 
 ```go
