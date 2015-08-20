@@ -34,7 +34,7 @@ type Collection interface {
 	Contains(elements ...interface{}) bool
 	collection.Collection
 ```
-### ArrayList
+#### ArrayList
 &nbsp;&nbsp;&nbsp;&nbsp;ArrayList实现List接口,ArrayList是基于动态数组的数据结构,会自动进行扩容(100%扩容)和压缩操作(当实际大小为容器的1/4时收缩为实际大小),ArrayList的Get、Remove方法都是O(n)时间复杂度,Contains方法为O(n*n)复杂度.
 
 ```go
